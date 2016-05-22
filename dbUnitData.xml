@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+	<dataset>      
+		<!--Telco DB Table -->
+		<eventData 
+			DateTime="11/01/2013 17:17" 
+			EventId="4098"
+			FailureClass="1"
+			UEType="33000253"	
+			Market="240"
+			Operator="21"
+			CellId="4"
+			Duration="1000"
+			CauseCode="1"
+			NEVersion="12A"
+			IMSI="240210000000003"	
+			HIER3_ID= "4809532081614990000"	
+			HIER32_ID="8226896360947470000"
+			HIER321_ID="1150444940909480000" />
+		
+		
+		<eventData 
+			DateTime="11/01/2013 17:20" 
+			EventId="5099"
+			FailureClass="1"
+			UEType="33000253"	
+			Market="240"
+			Operator="21"
+			CellId="4"
+			Duration="1000"
+			CauseCode="2"
+			NEVersion="12A"
+			IMSI="240210000000003"	
+			HIER3_ID= "4809532081614990000"	
+			HIER32_ID="8226896360947470000"
+			HIER321_ID="1150444940909480000" />
+	</dataset>
+	
+	
