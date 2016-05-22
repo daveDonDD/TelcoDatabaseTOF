@@ -13,7 +13,6 @@ import javax.ws.rs.core.MediaType;
 
 import ddoy.telcoData.entities.EventRecord;
 
-import static javax.ejb.TransactionAttributeType.MANDATORY;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
