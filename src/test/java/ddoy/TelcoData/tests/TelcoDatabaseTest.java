@@ -26,6 +26,12 @@ import org.apache.openejb.testing.EnableServices;
 import org.apache.openejb.testing.Module;
 import org.codehaus.jackson.map.ObjectMapper;
 
+import com.jayway.restassured.RestAssured;
+import com.jayway.restassured.RestAssured.*;
+import com.jayway.restassured.matcher.RestAssuredMatchers.*;
+
+import org.hamcrest.Matchers;
+import org.hamcrest.Matchers.*;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -77,7 +83,7 @@ public class TelcoDatabaseTest {
 	}
 	
 	
-		
+	/*	
 	@Test
 	public void test_GetOneEventRecordFromPersistence() throws IOException{ 
 	
@@ -92,9 +98,58 @@ public class TelcoDatabaseTest {
               assertEquals(expectedEvent.getCauseCode(),actualEvent.getCauseCode());     
        
 	}
+	*/
+	@Test
+	public void test_test_GetOneEventRecordFromPersistence_restassured() throws IOException{ 
+			
+		RestAssured.port = 4204;
+
+		RestAssured.when().get("/test/telcoData").
+		then().
+			statusCode(200).
+			body("eventId",Matchers.equalTo(4098));
+     
+	}
+	// test GetEventAndCauseFailureDataForImsi
+	// data driven - combinations to verify query is right , using java params
+	//      so with 1 target data set I can verify multiple imsis 
+	//
+	//  doing 1 rest assured test with DB unit first.
+/*	@Test
+	public void test_test_GetOneEventRecordFromPersistence() throws IOException{ 
+	
+        final String actualEventString = WebClient.create("http://localhost:4204").path("/test/telcoData/").get(String.class);
+		
+		EventRecord actualEvent = new ObjectMapper().readValue(actualEventString, EventRecord.class);
+
+		// Have loaded static data into DB - test is check DB returns same - can replace with a DBunit next,  check its EventId,causeCode 4098,1 
+        EventRecord expectedEvent = new EventRecord();
+      		expectedEvent.setEventId(4098);
+      		expectedEvent.setCauseCode(1);
+              assertEquals(expectedEvent.getCauseCode(),actualEvent.getCauseCode());     
+       
+	}
 	
 
-}
+  */      
+/*        
+		EventRecord actualEvent = new ObjectMapper().readValue(actualEventString, EventRecord.class);
+
+		// Have loaded static data into DB - test is check DB returns same - can replace with a DBunit next,  check its EventId,causeCode 4098,1 
+        EventRecord expectedEvent = new EventRecord();
+      		expectedEvent.setEventId(4098);
+      		expectedEvent.setCauseCode(1);
+              assertEquals(expectedEvent.getCauseCode(),actualEvent.getCauseCode());     
+  */  
+	
+	//}
+	
+	// test GetEventAndCauseFailureDataForImsi
+	// empty list - no failures for that imsi
+	// imsi doesn't exist
+	// Consider database errors : data base error - no connection, no table.......
 
 
 
+}	
+	

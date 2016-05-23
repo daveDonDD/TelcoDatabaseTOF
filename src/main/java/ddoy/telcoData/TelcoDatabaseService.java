@@ -29,23 +29,33 @@ public class TelcoDatabaseService {
 
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public EventRecord GetEventAndCauseFailureDataForImsi(){
-		//----------------------------------------------------------------------------------------
-		// User Story : As Customer Service Rep. I want to display, for a given affected IMSI, 
-		// the Event ID and Cause Code for any / all failures affecting that IMSI
-		//----------------------------------------------------------------------------------------
-		// return type is an event record for an imsi .....(a list of events will be implemented later
+	public EventRecord GetFirstEventRecord(){
+
+		// return type is the first event record for an imsi .....(a list of events will be implemented later
 		
 		System.out.println(" Telcodata started");  // put log4J in here and use logs as running tests
-				
-     	
-	
+		
 		Query query = entityManager.createQuery("SELECT e FROM EventRecord e");
 		List<EventRecord>events =  query.getResultList();
 		return events.get(0);  // send first one for now - can build to a collection next
 	
 		}	
 		
+	@GET
+	@Path("/ImsiEventIdAndCauseCodes")     ///need to add imsi
+	@Produces(MediaType.APPLICATION_JSON)
+	public EventRecord GetEventAndCauseFailureDataForImsi(){
+		//----------------------------------------------------------------------------------------
+		// User Story : As Customer Service Rep. I want to display, for a given affected IMSI, 
+		// the Event ID and Cause Code for any / all failures affecting that IMSI
+		//----------------------------------------------------------------------------------------
+		// return type is a list of event records for an imsi 
+				
+		Query query = entityManager.createQuery("SELECT e FROM EventRecord e");
+		List<EventRecord>events =  query.getResultList();
+		return events.get(0);  // send first one for now - can build to a collection next
+	
+		}	
 	
 	//@POST		// Temp Test class for JSON
     public String lowerCase(final String message) {
