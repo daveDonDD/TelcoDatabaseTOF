@@ -7,26 +7,31 @@ import javax.persistence.*;
 @Entity
 @Table(name="eventData")
 public class EventRecord implements Serializable {
-	private String DateTime;
 	
+	/**
+	 * Auto Generated variable from a warning
+	 */
+	private static final long serialVersionUID = 1L;
+
 	// Primary Key
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer EventId;
 	
 	private Integer FailureClass;
-	private Integer UEType;	
+	private Integer UeType;	
 	private Integer Market;
 	private Integer Operator;
 	private Integer CellId;
 	private Integer Duration;
 	private Integer CauseCode;
-	private String NEVersion;
-	private String IMSI; 	
-	private String HIER3_ID; 	
-	private String HIER32_ID;
-	private String HIER321_ID;
+	private String NeVersion;
+	private String Imsi; 	
+	private String Hier3_Id; 	
+	private String Hier32_Id;
+	private String Hier321_Id;
 	
+	private String DateTime;
 	
 	
 	// get and set methods TBD
@@ -47,143 +52,101 @@ public class EventRecord implements Serializable {
 		this.CauseCode = id;
 	}
 
-	/**
-	 * @return the uEType
-	 */
-	public Integer getUEType() {
-		return UEType;
+	public Integer getUeType() {
+		return UeType;
 	}
 
-	/**
-	 * @param uEType the uEType to set
-	 */
-	public void setUEType(Integer uEType) {
-		UEType = uEType;
+	public void setUeType(Integer uEType) {
+		UeType = uEType;
 	}
 
-	/**
-	 * @return the market
-	 */
 	public Integer getMarket() {
 		return Market;
 	}
 
-	/**
-	 * @param market the market to set
-	 */
 	public void setMarket(Integer market) {
 		Market = market;
 	}
 
-	/**
-	 * @return the operator
-	 */
 	public Integer getOperator() {
 		return Operator;
 	}
 
-	/**
-	 * @param operator the operator to set
-	 */
 	public void setOperator(Integer operator) {
 		Operator = operator;
 	}
 
-	/**
-	 * @return the cellId
-	 */
 	public Integer getCellId() {
 		return CellId;
 	}
 
-	/**
-	 * @param cellId the cellId to set
-	 */
 	public void setCellId(Integer cellId) {
 		CellId = cellId;
 	}
 
-	/**
-	 * @return the duration
-	 */
 	public Integer getDuration() {
 		return Duration;
 	}
 
-	/**
-	 * @param duration the duration to set
-	 */
 	public void setDuration(Integer duration) {
 		Duration = duration;
 	}
 
-	/**
-	 * @return the nEVersion
-	 */
-	//public String getNEVersion() {
-	//	return NEVersion;
-	//}
+	public String getNeVersion() {
+		return NeVersion;
+	}
 
-	/**
-	 * @param nEVersion the nEVersion to set
-	 */
-	//public void setNEVersion(String nEVersion) {
-	//	NEVersion = nEVersion;
-	//}
+	public void setNeVersion(String neVersion) {
+		NeVersion = neVersion;
+	}
 
-	/**
-	 * @return the iMSI
-	 */
-	///public String getIMSI() {
-	//	return IMSI;
-	//}
+	public String getImsi() {
+		return Imsi;
+	}
 
-	/**
-	 * @param iMSI the iMSI to set
-	 */
-	//public void setIMSI(String iMSI) {
-	//	IMSI = iMSI;
-	//}
+	public void setImsi(String imsi) {
+		Imsi = imsi;
+	}
 
-	/**
-	 * @return the hIER3_ID
-	 */
-	//public String getHIER3_ID() {
-	//	return HIER3_ID;
-	//}
+	public String getHier3_Id() {
+		return Hier3_Id;
+	}
 
-	/**
-	 * @param hIER3_ID the hIER3_ID to set
-	 */
-	//public void setHIER3_ID(String hIER3_ID) {
-//		HIER3_ID = hIER3_ID;
-	//}
+	public void setHier3_Id(String Id) {
+		Hier3_Id = Id;
+	}
 
-	/**
-	 * @return the hIER32_ID
-	 */
-	//public String getHIER32_ID() {
-	//	return HIER32_ID;
-	//}
+	public String getHier32_Id() {
+		return Hier32_Id;
+	}
 
-	/**
-	 * @param hIER32_ID the hIER32_ID to set
-	 */
-	//public void setHIER32_ID(String hIER32_ID) {
-	//	HIER32_ID = hIER32_ID;
-	//}
+	public void setHier32_Id(String hier32_Id) {
+		Hier32_Id = hier32_Id;
+	}
 
-	/**
-	 * @return the hIER321_ID
-	 */
-	//public String getHIER321_ID() {
-	//	return HIER321_ID;
-	//}
+	public String getHier321_Id() {
+		return Hier321_Id;
+	}
 
-	/**
-	 * @param hIER321_ID the hIER321_ID to set
-	 */
-	//public void setHIER321_ID(String hIER321_ID) {
-	//	HIER321_ID = hIER321_ID;
-	//}
+	public void setHier321_Id(String hier321_Id) {
+		Hier321_Id = hier321_Id;
+	}
+	
+	public String getDateTime() {
+		return DateTime;
+	}
+
+	public void setDateTime(String dateTime) {
+		DateTime = dateTime;
+	}
+
+	public Integer getFailureClass() {
+		return FailureClass;
+	}
+
+	public void setFailureClass(Integer failureClass) {
+		FailureClass = failureClass;
+	}
+
+	
 }

@@ -55,8 +55,8 @@ public class TelcoDatabaseService {
 		//----------------------------------------------------------------------------------------
 		// return type is a list of event records for an imsi 
 				
-		System.out.println("SELECT e FROM EventRecord e WHERE e.IMSI ='"+imsi+"'");
-		Query query = entityManager.createQuery("SELECT e FROM EventRecord e WHERE e.IMSI = '"+imsi+"'");
+		System.out.println("SELECT e FROM EventRecord e WHERE e.Imsi ='"+imsi+"'");
+		Query query = entityManager.createQuery("SELECT e FROM EventRecord e WHERE e.Imsi = '"+imsi+"'");
 		Collection<EventRecord>events =  query.getResultList();
 		EventRecordList ev = new EventRecordList();
 		ev.setEventRecordList(events);

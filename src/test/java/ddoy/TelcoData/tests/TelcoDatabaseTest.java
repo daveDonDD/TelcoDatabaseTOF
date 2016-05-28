@@ -120,13 +120,13 @@ public class TelcoDatabaseTest extends DBTestCase{
 		DatabaseOperation.INSERT.execute(connection, dataSet);
 		
 	}
-/*		
+		
 	@Test
-	public void test_GetOneEventRecord() throws IOException{ 
+	public void test_GetOneFullEventRecord() throws IOException{ 
 	
 		
 		//Bug in object mapper here with an unrecognisedfield error - some incompatibality with the object mapper since I added all getters and setters.
-		 *  - TBD - get help
+		// *  - TBD - get help
 		
         final String actualEventString = WebClient.create("http://localhost:4204").path("/test/telcoData/").get(String.class);
 		
@@ -134,14 +134,24 @@ public class TelcoDatabaseTest extends DBTestCase{
 
 		// Have loaded static data into DB - test is check DB returns same - can replace with a DBunit next,  check its EventId,causeCode 4098,1 
         EventRecord expectedEvent = new EventRecord();
-      		expectedEvent.setEventId(4098);
+      		expectedEvent.setEventId(4091);
+      		expectedEvent.setFailureClass(1);
       		expectedEvent.setCauseCode(1);
-      		expectedEvent.setUEType(33000253);
+      		expectedEvent.setMarket(240);
+      		expectedEvent.setUeType(33000253);
+      		expectedEvent.setOperator(21);
+      		expectedEvent.setCellId(4);
+      		expectedEvent.setDuration(1000);
+      		expectedEvent.setNeVersion("12A");
+      		expectedEvent.setImsi("240210000000003");
+      		expectedEvent.setHier321_Id("1150444940909480000");
+      		expectedEvent.setHier32_Id("8226896360947470000");
+      		expectedEvent.setHier3_Id("4809532081614990000");
             assertEquals(expectedEvent.getCauseCode(),actualEvent.getCauseCode());     
-            assertEquals(expectedEvent.getUEType(),actualEvent.getUEType());     
+            assertEquals(expectedEvent.getUeType(),actualEvent.getUeType());     
        
 	}
-	*/
+	
 	@Test
 	public void test_GetOneEventRecord_with_restassured() throws IOException{ 
 			
