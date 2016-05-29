@@ -36,8 +36,8 @@ public class TelcoDatabaseService {
 
 		// return type is the first event record for an imsi .....(a list of events will be implemented later
 		
-		System.out.println(" Telcodata started");  // put log4J in here and use logs as running tests
-		
+		System.out.println(" Telcodata started");  // put formal logging in here and use logs as running tests
+
 		Query query = entityManager.createQuery("SELECT e FROM EventRecord e");
 		List<EventRecord>events =  query.getResultList();
 		return events.get(0);  // send first one for now - can build to a collection next
